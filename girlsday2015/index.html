@@ -32,6 +32,15 @@
 	<li><a href="http://leipert.github.io/vsb/dbpedia/#/workspace">http://leipert.github.io/vsb/dbpedia/#/workspace</a></li>
 	</ul>
 
+	<h1>SPARQL-Anfragen</h1>
+
+	<ul><li>DBpedia-Endpunkt (deutsch): <a href="http://de.dbpedia.org/sparql">http://de.dbpedia.org/sparql</a></li>
+	</ul>
+
+	<ul><li>SELECT ?buergermeister WHERE { dbpedia-de:Belgern-Schildau  prop-de:bürgermeister ?buergermeister. }  <br/><a href="http://de.dbpedia.org/sparql?default-graph-uri=&query=SELECT+%3Fbuergermeister+%0D%0AWHERE+{%0D%0Adbpedia-de%3ABelgern-Schildau++prop-de%3Ab%C3%BCrgermeister+%3Fbuergermeister%0D%0A}+&format=text%2Fhtml&timeout=0&debug=on">Ergebnis</a></li>
+<li>SELECT ?stadt ?buergermeister WHERE { ?stadt  prop-de:bürgermeister ?buergermeister. }  <br/><a href="http://de.dbpedia.org/sparql?default-graph-uri=&query=SELECT+%3Fstadt+%3Fbuergermeister+WHERE+{+%3Fstadt++prop-de%3Ab%C3%BCrgermeister+%3Fbuergermeister.+}&format=text%2Fhtml&timeout=0&debug=on">Ergebnis</a></li>
+	</ul>
+
 	<h1>Skript</h1>
 
 	<ul><li><a href="workshop_girlsday.pdf">Vortragsfolien</a></li>
