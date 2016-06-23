@@ -37,8 +37,18 @@
 	<ul><li>DBpedia-Endpunkt (englisch): <a href="http://dbpedia.org/sparql">http://dbpedia.org/sparql</a></li>
 	</ul>
 
-	<ul><li>SELECT ?buergermeister WHERE { dbpedia-de:Belgern-Schildau  prop-de:bürgermeister ?buergermeister. }  <br/><a href="http://de.dbpedia.org/sparql?default-graph-uri=&query=SELECT+%3Fbuergermeister+%0D%0AWHERE+{%0D%0Adbpedia-de%3ABelgern-Schildau++prop-de%3Ab%C3%BCrgermeister+%3Fbuergermeister%0D%0A}+&format=text%2Fhtml&timeout=0&debug=on">Ergebnis</a></li>
-<li>SELECT ?stadt ?buergermeister WHERE { ?stadt  prop-de:bürgermeister ?buergermeister. }  <br/><a href="http://de.dbpedia.org/sparql?default-graph-uri=&query=SELECT+%3Fstadt+%3Fbuergermeister+WHERE+{+%3Fstadt++prop-de%3Ab%C3%BCrgermeister+%3Fbuergermeister.+}&format=text%2Fhtml&timeout=0&debug=on">Ergebnis</a></li>
+<pre class="listing">
+select ?l ?o where {
+?s &lt;http://dbpedia.org/ontology/leaderName&gt; ?o .
+?s &lt;http://dbpedia.org/ontology/country&gt; &lt;http://dbpedia.org/resource/Germany&gt; .
+?s &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; ?l.
+FILTER (langMatches(lang(?l), "de")) .
+?s &lt;http://dbpedia.org/property/state&gt; "Sachsen"@en.
+} LIMIT 100
+</pre>
+
+	<ul><li><a href="http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=select+%3Fl+%3Fo+where+{%0D%0A%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2FleaderName%3E+%3Fo+.%0D%0A%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2Fcountry%3E+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FGermany%3E+.%0D%0A%3Fs+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%3E+%3Fl.%0D%0AFILTER+%28langMatches%28lang%28%3Fl%29%2C+%22de%22%29%29+.%0D%0A%3Fs+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2Fstate%3E+%22Sachsen%22%40en.%0D%0A}+LIMIT+100&format=text%2Fhtml&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on">Ergebnis</a></li>
+
 	</ul>
 
 	<h1>Skript</h1>
